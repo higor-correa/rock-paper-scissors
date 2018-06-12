@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RockPaperScissors.Bll.Test.Utils;
 using RockPaperScissors.Bll.Utils;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace RockPaperScissors.Bll.Test
                 }
             });
 
-            Assert.AreEqual(FormatWinnerResponse.Format(Players.PLAYER_5), actual);
+            actual.Should().BeEquivalentTo(FormatWinnerResponse.Format(Players.PLAYER_5));
         }
     }
 }

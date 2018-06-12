@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RockPaperScissors.Bll.Exceptions;
 using RockPaperScissors.Bll.Test.Utils;
@@ -23,7 +24,7 @@ namespace RockPaperScissors.Bll.Test
                 Players.PLAYER_1, Players.PLAYER_2
             });
 
-            Assert.AreEqual(FormatWinnerResponse.Format(Players.PLAYER_2), actual);
+            actual.Should().BeEquivalentTo(FormatWinnerResponse.Format(Players.PLAYER_2));
         }
 
         [TestMethod]
@@ -34,7 +35,7 @@ namespace RockPaperScissors.Bll.Test
                 Players.PLAYER_1, Players.PLAYER_3
             });
 
-            Assert.AreEqual(FormatWinnerResponse.Format(Players.PLAYER_1), actual);
+            actual.Should().BeEquivalentTo(FormatWinnerResponse.Format(Players.PLAYER_1));
         }
 
         [TestMethod]

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RockPaperScissors.Bll.Test.Utils;
 
 namespace RockPaperScissors.Bll.Test
@@ -17,7 +18,7 @@ namespace RockPaperScissors.Bll.Test
         {
             var actual = _rpsEngine.GetWinner(Players.PLAYER_1, Players.PLAYER_2);
 
-            Assert.AreEqual(Players.PLAYER_2, actual);
+            actual.Should().BeEquivalentTo(Players.PLAYER_2);
         }
 
         [TestMethod]
@@ -25,7 +26,7 @@ namespace RockPaperScissors.Bll.Test
         {
             var actual = _rpsEngine.GetWinner(Players.PLAYER_1, Players.PLAYER_3);
 
-            Assert.AreEqual(Players.PLAYER_1, actual);
+            actual.Should().BeEquivalentTo(Players.PLAYER_1);
         }
 
         [TestMethod]
@@ -33,7 +34,7 @@ namespace RockPaperScissors.Bll.Test
         {
             var actual = _rpsEngine.GetWinner(Players.PLAYER_1, Players.PLAYER_4);
 
-            Assert.AreEqual(Players.PLAYER_1, actual);
+            actual.Should().BeEquivalentTo(Players.PLAYER_1);
         }
     }
 }
